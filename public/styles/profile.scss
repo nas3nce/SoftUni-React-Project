@@ -1,0 +1,21 @@
+.profileContainer {
+    max-width: 30%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+    background-color: rgba(255, 255, 255, 0.718);
+    padding: 2rem 1rem;
+
+        img {
+            clip-path: circle();
+            width:70%;
+            align-self: center;
+            margin: 1rem 2rem 2rem 2rem;
+
+        }
+    }
+   
+
+

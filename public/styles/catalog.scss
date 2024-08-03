@@ -1,0 +1,56 @@
+.catalogContainer {
+    max-width: 80%;
+    max-height: 80vh;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 100px;
+
+
+}
+
+
+
+
+.card {
+    max-width: 300px;
+    max-height: 300px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+    background-color: rgba(255, 255, 255, 0.718);
+
+    h3 {
+        margin: 0;
+        padding: 5px 0 3px 0;
+        font-size: 25px;
+    }
+
+
+    img {
+        border-radius: 3px;
+        // min-height: 235px;
+    }
+
+    a {
+        margin: 0;
+    }
+
+    p {
+        font-size: 16px;
+        margin-bottom: 0.2rem;
+        width: 250px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+    button {
+        text-align: left;
+        width: 45%;
+        padding: 5px 20px;
+        font-size: 16px;
+    }
+
+}

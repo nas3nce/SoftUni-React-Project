@@ -1,0 +1,18 @@
+@import "header";
+@import "footer";
+@import "site";
+@import "typography";
+@import "formContainer";
+@import './utilities';
+@import './variables';
+@import './home';
+@import './catalog';
+@import './details';
+@import './profile';
+
+body {
+    background-image:url('../images/123.jpg');
+    background-position: center;
+    background-repeat:repeat;
+    background-size:cover;
+}

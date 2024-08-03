@@ -1,0 +1,45 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    align-items: center;
+    gap: 40px;
+}
+
+.headerLeft {
+    display: flex;
+    color: #fff;    
+    align-items: center;
+    gap: 20px;
+    font-weight: bold;
+}
+
+.headerLeft p {
+    padding: 10px 20px;
+}
+
+.logo img {
+    height: 55px;
+    padding: 5px;
+    margin-left: 10px;
+    min-width: 60px;
+}
+
+.navButton {
+    color: #fff;
+    padding: 0.5rem 25px;
+}
+
+.navButton:hover , .headerLeft p:hover {
+    background-color:rgba(173, 173, 173, 0.301);
+}
+
+.nav ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+// .margin-bottom{
+//     height: 40px;
+//     margin-bottom: 10px;
+// }

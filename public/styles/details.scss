@@ -1,0 +1,66 @@
+.detailsContainer {
+    width: 60%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px black;
+    background-color: rgba(255, 255, 255, 0.718);
+    padding: 1rem;
+
+    .header {
+        margin-bottom: 7px;
+
+        h2{
+            margin: 0;
+        }
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button {
+            padding: 5px 30px;
+
+        }
+
+        button:first-of-type {
+            margin-right: 20px;
+        }
+    }
+
+    .imageContainer {
+        position: relative;
+        width: 100%;
+        border-radius: 5px;
+        box-shadow: 0 0 2px black;
+        margin-bottom: 10px;
+    }
+
+    .like {
+        display: flex;
+        width: 100%;
+        top: 0;
+        padding: 2rem;
+        justify-content: space-between;
+        position: absolute;
+
+        .likeBtn {
+            margin-top: 16px;
+            padding: 5px 30px;
+        }
+
+        .fa-stack {
+
+
+            i {
+                font-size: 55px;
+                color: #198754;
+                text-align: center;
+            }
+
+            p {
+                padding: 5px 6px;
+                padding-left: 10px;
+            }
+        }
+
+    }
+}
