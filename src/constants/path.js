@@ -7,4 +7,5 @@ export const Path = {
     Catalog: '/catalog',
     Create: '/create',
     Details: '/catalog/:id',
+    Error: '/404'
 };

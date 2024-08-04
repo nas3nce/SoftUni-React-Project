@@ -9,14 +9,14 @@ export default function Home() {
 
                 <Carousel>
                     <Carousel.Item>
-                        <img src="public\images\123.jpg" alt="" />
+                        <img src="\public\images\123.jpg" alt="" />
                         <Carousel.Caption>
                             <h3>First slide label</h3>
                             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img src="public\images\1231.jpg" alt="" />
+                        <img src="\public\images\1231.jpg" alt="" />
 
                         <Carousel.Caption>
                             <h3>Second slide label</h3>
@@ -24,7 +24,7 @@ export default function Home() {
                         </Carousel.Caption>
                     </Carousel.Item>
                     <Carousel.Item>
-                        <img src="public\images\background.jpg" alt="" />
+                        <img src="\public\images\background.jpg" alt="" />
 
                         <Carousel.Caption>
                             <h3>Third slide label</h3>

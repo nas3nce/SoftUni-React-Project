@@ -1,0 +1,85 @@
+{
+  "hash": "67287adc",
+  "configHash": "040813f1",
+  "lockfileHash": "e3b0c442",
+  "browserHash": "4f5e66f7",
+  "optimized": {
+    "moment": {
+      "src": "../../node_modules/moment/dist/moment.js",
+      "file": "moment.js",
+      "fileHash": "0bf95306",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "92762cb9",
+      "needsInterop": true
+    },
+    "react-bootstrap": {
+      "src": "../../node_modules/react-bootstrap/esm/index.js",
+      "file": "react-bootstrap.js",
+      "fileHash": "f37ca58d",
+      "needsInterop": false
+    },
+    "react-bootstrap/Button": {
+      "src": "../../node_modules/react-bootstrap/esm/Button.js",
+      "file": "react-bootstrap_Button.js",
+      "fileHash": "630389a5",
+      "needsInterop": false
+    },
+    "react-bootstrap/Carousel": {
+      "src": "../../node_modules/react-bootstrap/esm/Carousel.js",
+      "file": "react-bootstrap_Carousel.js",
+      "fileHash": "cdfb35e9",
+      "needsInterop": false
+    },
+    "react-bootstrap/Form": {
+      "src": "../../node_modules/react-bootstrap/esm/Form.js",
+      "file": "react-bootstrap_Form.js",
+      "fileHash": "2fb5fa20",
+      "needsInterop": false
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "c4952163",
+      "needsInterop": true
+    },
+    "react-router-dom": {
+      "src": "../../node_modules/react-router-dom/dist/index.js",
+      "file": "react-router-dom.js",
+      "fileHash": "d7e85662",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-426TE4OU": {
+      "file": "chunk-426TE4OU.js"
+    },
+    "chunk-K44VTHYY": {
+      "file": "chunk-K44VTHYY.js"
+    },
+    "chunk-VUK6O2FO": {
+      "file": "chunk-VUK6O2FO.js"
+    },
+    "chunk-WLPJYGOC": {
+      "file": "chunk-WLPJYGOC.js"
+    },
+    "chunk-6OZ3XBNJ": {
+      "file": "chunk-6OZ3XBNJ.js"
+    },
+    "chunk-JREWIRVS": {
+      "file": "chunk-JREWIRVS.js"
+    },
+    "chunk-6UQLG4H2": {
+      "file": "chunk-6UQLG4H2.js"
+    },
+    "chunk-TXI3HGC7": {
+      "file": "chunk-TXI3HGC7.js"
+    },
+    "chunk-7D4SUZUM": {
+      "file": "chunk-7D4SUZUM.js"
+    }
+  }
+}

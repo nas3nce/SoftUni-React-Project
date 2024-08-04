@@ -13,27 +13,44 @@ import Catalog from './components/catalog/Catalog';
 import Create from './components/create/Create';
 import Details from './components/details/Details';
 import Profile from './components/profile/Profile';
+import { AuthProvider } from './contexts/authContext';
+import Logout from './components/logout/Logout';
+import PageNotFound from './components/pageNotFound/PageNotFound';
+import AuthGuard from './guards/authGuard';
+import UserGuard from './guards/userGuard';
 
 
 function App() {
 
   return (
     <>
-      <Header />
-      <div className="site">
-        <Routes>
+      <AuthProvider>
+        <Header />
+        <div className="site">
+          <Routes>
 
-          <Route path={Path.Home} element={<Home />} />
-          <Route path={Path.Login} element={<Login />} />
-          <Route path={Path.Register} element={<Register />} />
-          <Route path={Path.Catalog} element={<Catalog />} />
-          <Route path={Path.Create} element={<Create />} />
-          <Route path={Path.Details} element={<Details />} />
-          <Route path={Path.Profile} element={<Profile />} />
+            <Route path={Path.Home} element={<Home />} />
+            <Route path={Path.Catalog} element={<Catalog />} />
+            <Route path={Path.Details} element={<Details />} />
+            <Route path={Path.Error} element={<PageNotFound />} />
 
-        </Routes>
-      </div>
-      <Footer />
+            <Route element={<AuthGuard />}>
+              <Route path={Path.Create} element={<Create />} />
+              <Route path={Path.Profile} element={<Profile />} />
+              <Route path={Path.Logout} element={<Logout />} />
+            </Route>
+
+            <Route element={<UserGuard />}>
+              <Route path={Path.Login} element={<Login />} />
+              <Route path={Path.Register} element={<Register />} />
+            </Route>
+
+
+
+          </Routes>
+        </div>
+        <Footer />
+      </AuthProvider>
     </>
   );
 }

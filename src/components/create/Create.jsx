@@ -1,3 +1,4 @@
+import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
 
 
@@ -40,6 +41,7 @@ export default function Create() {
                     <Form.Control type="text" placeholder="https://..." />
                 </Form.Group>
 
+                <Button variant='dark' className='w-100'> Add a Trail </Button>
             </Form>
         </div>
     );

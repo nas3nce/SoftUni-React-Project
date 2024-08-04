@@ -13,7 +13,6 @@ export default function Details() {
             <div className="imageContainer">
                 <img src="\public\images\background.jpg" alt="" />
                 <div className="like">
-                    {/* <i class="fa-solid fa-heart">22</i> */}
               
 
                     <span className="fa-stack">
