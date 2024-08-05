@@ -5,7 +5,6 @@ import * as authService from '../services/authService';
 import usePersistedState from "../hooks/usePersistedState";
 import { Path } from "../constants/path";
 
-
 const AuthContext = createContext();
 
 AuthContext.displayName = 'AuthContext';
@@ -18,7 +17,6 @@ export const AuthProvider = ({
     const [auth, setAuth] = usePersistedState('auth', {});
 
     const loginSubmitHandler = async (formValues) => {
-        console.log('here', formValues);
         const result = await authService.login(formValues.email, formValues.password);
 
         setAuth(result);
@@ -52,8 +50,6 @@ export const AuthProvider = ({
         auth,
         isAuth: !!auth.accessToken
     };
-
-    console.log('auth', auth);
 
     return (
         < AuthContext.Provider value={authContextProviderValues}>

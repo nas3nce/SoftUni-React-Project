@@ -6,14 +6,11 @@
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 100px;
-
-
 }
 
-
-
-
 .card {
+    flex: 1;
+    justify-content: space-between;
     max-width: 300px;
     max-height: 300px;
     padding: 10px;
@@ -25,12 +22,16 @@
         margin: 0;
         padding: 5px 0 3px 0;
         font-size: 25px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 
-
     img {
+        flex: 1;
+        max-width: 280px;
+        max-height: 180px;
         border-radius: 3px;
-        // min-height: 235px;
     }
 
     a {
@@ -40,15 +41,15 @@
     p {
         font-size: 16px;
         margin-bottom: 0.2rem;
-        width: 250px;
         text-overflow: ellipsis;
         overflow: hidden;
         white-space: nowrap;
     }
 
     button {
-        text-align: left;
-        width: 45%;
+        max-height: 40px;
+        text-align: center;
+        width: 100%;
         padding: 5px 20px;
         font-size: 16px;
     }

@@ -1,20 +1,10 @@
 import { useAuthContext } from "../../contexts/authContext";
-import moment from 'moment';
+import { elapsedTime } from "../../utils/dateConverter";
 
 
 export default function Profile() {
     const { auth } = useAuthContext();
-    const { username, email, _createdOn,imageUrl } = auth;
-
-
-
-    console.log(auth._createdOn);
-    const time = () => moment(auth._createdOn).fromNow();
-
-
-    console.log(time());
-
-
+    const { username, email, _createdOn, imageUrl } = auth;
 
     return (
 
@@ -25,7 +15,7 @@ export default function Profile() {
 
             <p><strong>email:</strong> {email}</p>
 
-            <p><strong>user since :</strong> {time()}</p>
+            <p><strong>user since :</strong> {elapsedTime(_createdOn)}</p>
 
         </div>
     );

@@ -1,6 +1,21 @@
+import { useEffect, useState } from 'react';
+
 import Carousel from 'react-bootstrap/Carousel';
 
+import * as resourceService from '../../services/resourceService';
+import { useNavigate } from 'react-router-dom';
+import { pathBuilder } from '../../utils/pathConverter';
+import { Path } from '../../constants/path';
+
 export default function Home() {
+    const navigate = useNavigate();
+    const [latest, setLatest] = useState([]);
+
+    useEffect(() => {
+        resourceService.getLatest()
+            .then(result => setLatest(result));
+    }, []);
+
     return (
         <>
             <h1>The Entrance To Bulgarian Beauty</h1>
@@ -8,31 +23,19 @@ export default function Home() {
             <div className='content'>
 
                 <Carousel>
-                    <Carousel.Item>
-                        <img src="\public\images\123.jpg" alt="" />
-                        <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img src="\public\images\1231.jpg" alt="" />
 
-                        <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img src="\public\images\background.jpg" alt="" />
+                    {latest?.map(resource =>
+                        <Carousel.Item className='hoverDim' key={resource._id} onClick={() => navigate(pathBuilder(Path.Details, { id: resource._id }))}>
+                            <img  className='carouselImg' src={resource.imageUrl} alt="" />
+                            <Carousel.Caption>
+                                <h3>{resource.title}</h3>
+                                <p>
+                                    {resource.description}
+                                </p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    )}
 
-                        <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>
-                                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                            </p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
                 </Carousel>
             </div>
 

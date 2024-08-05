@@ -1,8 +1,15 @@
 import { Path } from './constants/path';
 import { Route, Routes } from 'react-router-dom';
 
+import { AuthProvider } from './contexts/authContext';
+import { ResourceProvider } from './contexts/resourceContext';
+import { ModalProvider } from './contexts/modalContext';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './../public/styles/style.scss';
+
+import UserGuard from './guards/userGuard';
+import AuthGuard from './guards/authGuard';
 
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
@@ -13,11 +20,9 @@ import Catalog from './components/catalog/Catalog';
 import Create from './components/create/Create';
 import Details from './components/details/Details';
 import Profile from './components/profile/Profile';
-import { AuthProvider } from './contexts/authContext';
 import Logout from './components/logout/Logout';
 import PageNotFound from './components/pageNotFound/PageNotFound';
-import AuthGuard from './guards/authGuard';
-import UserGuard from './guards/userGuard';
+import Edit from './components/edit/Edit';
 
 
 function App() {
@@ -25,31 +30,34 @@ function App() {
   return (
     <>
       <AuthProvider>
-        <Header />
-        <div className="site">
-          <Routes>
+        <ResourceProvider>
+          <ModalProvider>
+            <Header />
+            <div className="site">
+              <Routes>
 
-            <Route path={Path.Home} element={<Home />} />
-            <Route path={Path.Catalog} element={<Catalog />} />
-            <Route path={Path.Details} element={<Details />} />
-            <Route path={Path.Error} element={<PageNotFound />} />
+                <Route path={Path.Home} element={<Home />} />
+                <Route path={Path.Catalog} element={<Catalog />} />
+                <Route path={Path.Details} element={<Details />} />
+                <Route path={Path.Error} element={<PageNotFound />} />
 
-            <Route element={<AuthGuard />}>
-              <Route path={Path.Create} element={<Create />} />
-              <Route path={Path.Profile} element={<Profile />} />
-              <Route path={Path.Logout} element={<Logout />} />
-            </Route>
+                <Route element={<AuthGuard />}>
+                  <Route path={Path.Create} element={<Create />} />
+                  <Route path={Path.Edit} element={<Edit />} />
+                  <Route path={Path.Profile} element={<Profile />} />
+                  <Route path={Path.Logout} element={<Logout />} />
+                </Route>
 
-            <Route element={<UserGuard />}>
-              <Route path={Path.Login} element={<Login />} />
-              <Route path={Path.Register} element={<Register />} />
-            </Route>
+                <Route element={<UserGuard />}>
+                  <Route path={Path.Login} element={<Login />} />
+                  <Route path={Path.Register} element={<Register />} />
+                </Route>
 
-
-
-          </Routes>
-        </div>
-        <Footer />
+              </Routes>
+            </div>
+            <Footer />
+          </ModalProvider>
+        </ResourceProvider>
       </AuthProvider>
     </>
   );

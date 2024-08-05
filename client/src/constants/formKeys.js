@@ -1,12 +1,13 @@
 const formKeys = {
-    email: 'email',
-    username: 'username',
-    password: 'password',
-    rePass: 'rePass',
-    title: 'title',
-    difficulty: 'difficulty',
-    imageUrl: 'imageUrl',
-    details: 'details'
+    Email: 'email',
+    Username: 'username',
+    Password: 'password',
+    RePass: 'rePass',
+    ImageUrl: 'imageUrl',
+    Title: 'title',
+    Difficulty: 'difficulty',
+    Duration: 'duration',
+    Description: 'description'
 };
 
 export default formKeys;

@@ -11,3 +11,19 @@ h1 {
     margin-bottom: 3rem;
     text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.918), rgba(0, 0, 0, 0.692) 1px 1px 4px;
 }
+
+.carouselImg {
+    height: 552.547px;
+    width: 1196px;
+
+}
+
+.hoverDim {
+    -webkit-filter: brightness(100%);
+    transition: 0.3s ease-in-out;
+}
+
+.hoverDim:hover {
+    -webkit-filter: brightness(80%);
+    transition: 0.3s ease-in-out;
+}

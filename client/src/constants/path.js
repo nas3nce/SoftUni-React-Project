@@ -5,7 +5,9 @@ export const Path = {
     Logout: '/logout',
     Profile: '/profile',
     Catalog: '/catalog',
-    Create: '/create',
     Details: '/catalog/:id',
+    Create: '/create',
+    Edit: '/catalog/:id/edit',
+    Delete: '/catalog/:id/delete',
     Error: '/404'
 };

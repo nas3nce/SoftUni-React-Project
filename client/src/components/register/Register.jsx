@@ -10,11 +10,11 @@ export default function Register() {
     const { registerSubmitHandler } = useAuthContext();
 
     const initialValues = useMemo(() => ({
-        [formKeys.email]: '',
-        [formKeys.username]: '',
-        [formKeys.imageUrl]: '',
-        [formKeys.password]: '',
-        [formKeys.rePass]: ''
+        [formKeys.Email]: '',
+        [formKeys.Username]: '',
+        [formKeys.ImageUrl]: '',
+        [formKeys.Password]: '',
+        [formKeys.RePass]: ''
     }), []);
 
     const { formValues, onChange, onSubmit } = useForm(registerSubmitHandler, initialValues);
@@ -30,7 +30,7 @@ export default function Register() {
                     <Form.Label>Email address</Form.Label>
                     <Form.Control
                         type="email"
-                        name={formKeys.email}
+                        name={formKeys.Email}
                         placeholder="name@example.com"
                         onChange={onChange}
                         value={formValues.email}
@@ -41,7 +41,7 @@ export default function Register() {
                     <Form.Label>Username</Form.Label>
                     <Form.Control
                         type="text"
-                        name={formKeys.username}
+                        name={formKeys.Username}
                         placeholder="Your Username Here"
                         onChange={onChange}
                         value={formValues.username}
@@ -52,7 +52,7 @@ export default function Register() {
                     <Form.Label>Profile Picture Link</Form.Label>
                     <Form.Control
                         type="url"
-                        name={formKeys.imageUrl}
+                        name={formKeys.ImageUrl}
                         placeholder="https://..."
                         onChange={onChange}
                         value={formValues.imageUrl}
@@ -63,7 +63,7 @@ export default function Register() {
                     <Form.Label>Password</Form.Label>
                     <Form.Control
                         type="password"
-                        name={formKeys.password}
+                        name={formKeys.Password}
                         placeholder="******"
                         onChange={onChange}
                         value={formValues.password} />
@@ -73,7 +73,7 @@ export default function Register() {
                     <Form.Label>Repeat Password</Form.Label>
                     <Form.Control
                         type="password"
-                        name={formKeys.rePass}
+                        name={formKeys.RePass}
                         placeholder="******"
                         onChange={onChange}
                         value={formValues.rePass}
