@@ -3,12 +3,12 @@ import { Link, useParams } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
 
-import { useAuthContext } from '../../contexts/authContext';
-import { useModalContext } from '../../contexts/modalContext';
-import * as resourceService from '../../services/resourceService';
-import { durationConverter } from '../../utils/durationConverter';
-import { pathBuilder } from '../../utils/pathConverter';
-import { Path } from '../../constants/path';
+import { useAuthContext } from '../../../contexts/authContext';
+import { useModalContext } from '../../../contexts/modalContext';
+import * as resourceService from '../../../services/resourceService';
+import { durationConverter } from '../../../utils/durationConverter';
+import { pathBuilder } from '../../../utils/pathConverter';
+import { Path } from '../../../constants/path';
 import Delete from '../delete/Delete';
 
 export default function Details() {
@@ -20,7 +20,8 @@ export default function Details() {
 
     useEffect(() => {
         resourceService.getOne(id)
-            .then(result => setResource(result));
+            .then(result => setResource(result))
+            .catch(err => console.log(err));
     }, []);
 
     const { title, imageUrl, description, difficulty, _id, duration, _ownerId } = resource;

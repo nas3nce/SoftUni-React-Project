@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { Path } from "../../constants/path";
-import { useAuthContext } from "../../contexts/authContext";
+import { Path } from "../../../constants/path";
+import { useAuthContext } from "../../../contexts/authContext";
 
 
 export default function Header() {

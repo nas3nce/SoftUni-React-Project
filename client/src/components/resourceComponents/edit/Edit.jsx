@@ -1,17 +1,27 @@
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
-import formKeys from '../../constants/formKeys';
-import useForm from '../../hooks/useForm';
+import formKeys from '../../../constants/formKeys';
+import useForm from '../../../hooks/useForm';
 
-import { useResourceContext } from '../../contexts/resourceContext';
+import { useResourceContext } from '../../../contexts/resourceContext';
 
+import * as resourceService from '../../../services/resourceService';
+import { useNavigate, useParams, Navigate } from 'react-router-dom';
+import { Path } from '../../../constants/path';
+import { pathBuilder } from '../../../utils/pathConverter';
+import { useAuthContext } from '../../../contexts/authContext';
+import { useErrorContext } from '../../../contexts/errorContext';
+import AlertMessage from '../../errorComponents/alertMessage/AlertMessage';
 
-export default function Create() {
-
-    const { onCreateSubmit } = useResourceContext();
+export default function Edit() {
+    const navigate = useNavigate();
+    const { id } = useParams();
+    const { auth } = useAuthContext();
+    const { onEditSubmit, getResource } = useResourceContext();
+    const { error } = useErrorContext();
 
     const initialValues = useMemo(() => ({
         [formKeys.Title]: '',
@@ -21,13 +31,26 @@ export default function Create() {
         [formKeys.Description]: ''
     }), []);
 
-    const { formValues, onChange, onSubmit } = useForm(onCreateSubmit, initialValues);
+    const isOwner = auth._id === getResource(id)?._ownerId;
 
+    if (!isOwner) {
+        return <Navigate to={Path.Error} />;
+    }
+
+    useEffect(() => {
+        resourceService.getOne(id)
+            .then(result => changeValues(result))
+            .catch(err => console.log(err));;
+    }, []);
+
+    const { formValues, onChange, onSubmit, changeValues } = useForm(onEditSubmit, initialValues);
 
     return (
-        <div className='formContainer mt-3'>
 
-            <h2 className='text-center p-3'>Add a Trail</h2 >
+        <div className='formContainer mt-3'>
+            {error && <AlertMessage {...error} />}
+
+            <h2 className='text-center p-3'>Edit Trail</h2 >
             <Form onSubmit={onSubmit}>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
                     <Form.Label>Trail Name</Form.Label>
@@ -37,6 +60,7 @@ export default function Create() {
                         name={formKeys.Title}
                         onChange={onChange}
                         value={formValues.title}
+                        required
                     />
                 </Form.Group>
 
@@ -47,6 +71,7 @@ export default function Create() {
                         name={formKeys.ImageUrl}
                         onChange={onChange}
                         value={formValues.imageUrl}
+                        required
                     />
                 </Form.Group>
 
@@ -57,14 +82,16 @@ export default function Create() {
                         name={formKeys.Difficulty}
                         onChange={onChange}
                         value={formValues.difficulty}
+                        required
                     >
-                        <option>Select Trail Difficulty</option>
+                        <option value=''>Select Trail Difficulty</option>
                         <option value="Walk in the park">Walk in the park</option>
                         <option value="Moderate">Moderate</option>
                         <option value="Strenuous">Strenuous</option>
                         <option value="45 Degrees of Pain">45 Degrees of Pain</option>
                     </Form.Select>
                 </Form.Group>
+
 
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
                     <Form.Label>Average Duration</Form.Label>
@@ -74,6 +101,7 @@ export default function Create() {
                         name={formKeys.Duration}
                         onChange={onChange}
                         value={formValues.duration}
+                        required
                     />
                 </Form.Group>
 
@@ -83,14 +111,23 @@ export default function Create() {
                         as='textarea'
                         rows={3}
                         type="text"
-                        placeholder="Location Name"
+                        placeholder="Trail Info"
                         name={formKeys.Description}
                         onChange={onChange}
                         value={formValues.description}
+                        required
                     />
                 </Form.Group>
 
-                <Button type='submit' variant='dark' className='w-100'> Add a Trail </Button>
+                <div className='d-flex g-4'>
+
+                    <Button type='submit' variant='dark' className='w-50'> Edit Trail </Button>
+                    <Button
+                        variant='dark'
+                        className='w-50'
+                        onClick={() => navigate(pathBuilder(Path.Details, { id }))}
+                    > Cancel </Button>
+                </div>
             </Form>
         </div>
     );

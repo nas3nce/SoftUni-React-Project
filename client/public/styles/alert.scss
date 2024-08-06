@@ -1,0 +1,15 @@
+.alert {
+    margin: 2rem 10rem;
+    position: absolute;
+    right: 0;
+    top: 0;
+    opacity: 1;
+    animation: fadeOut 1s ease-in 2s forwards;
+}
+
+@keyframes fadeOut {
+    to {
+        transition: opacity 0s ease-in-out;
+        opacity: 0;
+    }
+}

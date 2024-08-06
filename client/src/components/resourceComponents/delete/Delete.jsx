@@ -1,9 +1,9 @@
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import { useModalContext } from '../../contexts/modalContext';
-import { formatTime } from '../../utils/dateConverter';
-import { useResourceContext } from '../../contexts/resourceContext';
-import * as resourceService from '../../services/resourceService';
+import { useModalContext } from '../../../contexts/modalContext';
+import { formatTime } from '../../../utils/dateConverter';
+import { useResourceContext } from '../../../contexts/resourceContext';
+import * as resourceService from '../../../services/resourceService';
 
 
 export default function Delete({
@@ -14,10 +14,10 @@ export default function Delete({
     const { show, setModal } = useModalContext();
     const { onDeleteSubmit } = useResourceContext();
 
-
     const onDeleteHandler = () => {
         resourceService.remove(_id);
         onDeleteSubmit(_id);
+        setModal(false)
     };
 
     return (

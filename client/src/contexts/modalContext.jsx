@@ -15,9 +15,7 @@ export const ModalProvider = ({
         show,
         setModal
     };
-
-    console.log('modal context', show);
-
+    
     return (
         <ModalContext.Provider value={modalContextProviderValues}>
             {children}

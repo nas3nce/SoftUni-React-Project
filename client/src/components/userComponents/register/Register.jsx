@@ -1,13 +1,16 @@
 import { Button } from 'react-bootstrap';
 import Form from 'react-bootstrap/Form';
-import { useAuthContext } from '../../contexts/authContext';
-import formKeys from '../../constants/formKeys';
-import useForm from '../../hooks/useForm';
+import { useAuthContext } from '../../../contexts/authContext';
+import formKeys from '../../../constants/formKeys';
+import useForm from '../../../hooks/useForm';
 import { useMemo } from 'react';
+import AlertMessage from '../../errorComponents/alertMessage/AlertMessage';
+import { useErrorContext } from '../../../contexts/errorContext';
 
 
 export default function Register() {
     const { registerSubmitHandler } = useAuthContext();
+    const { error } = useErrorContext();
 
     const initialValues = useMemo(() => ({
         [formKeys.Email]: '',
@@ -19,10 +22,9 @@ export default function Register() {
 
     const { formValues, onChange, onSubmit } = useForm(registerSubmitHandler, initialValues);
 
-
     return (
-
         <div className='formContainer mt-3'>
+            {error && <AlertMessage {...error} />}
 
             <h2 className='text-center p-3'>Register</h2 >
             <Form onSubmit={onSubmit}>
@@ -34,6 +36,7 @@ export default function Register() {
                         placeholder="name@example.com"
                         onChange={onChange}
                         value={formValues.email}
+                        required
                     />
                 </Form.Group>
 
@@ -45,6 +48,7 @@ export default function Register() {
                         placeholder="Your Username Here"
                         onChange={onChange}
                         value={formValues.username}
+                        required
                     />
                 </Form.Group>
 
@@ -66,7 +70,10 @@ export default function Register() {
                         name={formKeys.Password}
                         placeholder="******"
                         onChange={onChange}
-                        value={formValues.password} />
+                        value={formValues.password}
+                        required
+                    />
+
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput5">
@@ -77,6 +84,7 @@ export default function Register() {
                         placeholder="******"
                         onChange={onChange}
                         value={formValues.rePass}
+                        required
                     />
 
                 </Form.Group>

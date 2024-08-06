@@ -12,7 +12,16 @@ $spacing-map: (
     8: $spacing-8,
     9: $spacing-9,
     10: $spacing-10,
-    20: $spacing-20
+    11: $spacing-11,
+    12: $spacing-12,
+    13: $spacing-13,
+    14: $spacing-14,
+    15: $spacing-15,
+    16: $spacing-16,
+    17: $spacing-17,
+    18: $spacing-18,
+    19: $spacing-19,
+    20: $spacing-20,
 );
 
 .text-center {
@@ -184,10 +193,14 @@ $spacing-map: (
 }
 
 // Spacing utilities
+.m0-auto {
+    margin: 0 auto;
+}
 
 .ml-auto {
     margin-left: auto;
 }
+
 
 .my-auto {
     margin-top: auto;
@@ -325,5 +338,5 @@ $spacing-map: (
     .fs-#{$key} {
         font-size: $val
     }
-  
+
 }

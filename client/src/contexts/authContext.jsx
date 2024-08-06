@@ -1,13 +1,13 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import * as authService from '../services/authService';
 import usePersistedState from "../hooks/usePersistedState";
 import { Path } from "../constants/path";
+import { useErrorContext } from "./errorContext";
+import { formValidation } from "../utils/formValidation";
 
 const AuthContext = createContext();
-
-AuthContext.displayName = 'AuthContext';
 
 export const AuthProvider = ({
     children,
@@ -15,23 +15,38 @@ export const AuthProvider = ({
 
     const navigate = useNavigate();
     const [auth, setAuth] = usePersistedState('auth', {});
+    const { setError } = useErrorContext();
 
     const loginSubmitHandler = async (formValues) => {
-        const result = await authService.login(formValues.email, formValues.password);
+        try {
+            formValidation(formValues);
 
-        setAuth(result);
-        localStorage.setItem('accessToken', result.accessToken);
+            const result = await authService.login(formValues.email, formValues.password);
 
-        navigate(Path.Home);
+            setAuth(result);
+            localStorage.setItem('accessToken', result.accessToken);
+
+            navigate(Path.Home);
+        } catch (err) {
+            return setError(err);
+        }
+
     };
 
     const registerSubmitHandler = async (formValues) => {
-        const result = await authService.register(formValues.username, formValues.email, formValues.password, formValues.imageUrl);
+        try {
+            formValidation(formValues);
 
-        setAuth(result);
-        localStorage.setItem('accessToken', result.accessToken);
+            const result = await authService.register(formValues.username, formValues.email, formValues.password, formValues.imageUrl);
 
-        navigate(Path.Home);
+            setAuth(result);
+            localStorage.setItem('accessToken', result.accessToken);
+
+            navigate(Path.Home);
+
+        } catch (err) {
+            return setError(err);
+        }
     };
 
     const logoutHandler = () => {
@@ -59,7 +74,7 @@ export const AuthProvider = ({
 };
 
 export const useAuthContext = () => {
-	const context = useContext(AuthContext);
+    const context = useContext(AuthContext);
 
-	return context;
+    return context;
 };

@@ -9,10 +9,11 @@
 }
 
 .card {
-    flex: 1;
+display: block;
     justify-content: space-between;
-    max-width: 300px;
-    max-height: 300px;
+    width: 300px;
+    height: 300px;
+    min-width: 200px;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 5px black;
@@ -29,8 +30,8 @@
 
     img {
         flex: 1;
-        max-width: 280px;
-        max-height: 180px;
+        width: 280px;
+        height: 180px;
         border-radius: 3px;
     }
 

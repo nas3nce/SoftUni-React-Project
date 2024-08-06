@@ -36,7 +36,8 @@ const request = async (method, url, data) => {
     const result = await response.json();
 
     if (!response.ok) {
-        throw result;
+        console.log('asdasdasd' , response);
+        throw result
     }
 
     return result;
