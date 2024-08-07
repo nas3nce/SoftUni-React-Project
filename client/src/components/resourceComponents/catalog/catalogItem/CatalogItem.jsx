@@ -12,7 +12,7 @@ export default function CatalogItem({
             <img src={imageUrl} alt="" />
             <h3 >{title}</h3>
             <p > {description}</p>
-            <Link to={_id}><Button variant="dark">Read More</Button> </Link>
+            <Link to={_id}> <Button variant="dark">Read More</Button></Link>
         </div>
     );
 }

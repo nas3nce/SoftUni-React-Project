@@ -1326,9 +1326,11 @@
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             },
             "847ec027-f659-4086-8032-5173e2f9c93a": {
-                email: "george@abv.bg",
-                username: "George",
-                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
+                email: "werwer@gmail.com",
+                username: "werwer",
+                hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1",
+                _createdOn: 1020972042283,
+                imageUrl: 'https://media.tenor.com/pzrCRRlke9UAAAAC/chop-suey-system-of-a-down.gif'
             },
             "60f0cf0b-34b0-4abd-9769-8c42f830dffc": {
                 email: "admin@abv.bg",
@@ -1340,57 +1342,114 @@
         }
     };
     var seedData = {
-        recipes: {
-            "3987279d-0ad4-4afb-8ca9-5b256ae3b298": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                name: "Easy Lasagna",
-                img: "assets/lasagna.jpg",
-                ingredients: [
-                    "1 tbsp Ingredient 1",
-                    "2 cups Ingredient 2",
-                    "500 g  Ingredient 3",
-                    "25 g Ingredient 4"
-                ],
-                steps: [
-                    "Prepare ingredients",
-                    "Mix ingredients",
-                    "Cook until done"
-                ],
-                _createdOn: 1613551279012
-            },
-            "8f414b4f-ab39-4d36-bedb-2ad69da9c830": {
-                _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                name: "Grilled Duck Fillet",
-                img: "assets/roast.jpg",
-                ingredients: [
-                    "500 g  Ingredient 1",
-                    "3 tbsp Ingredient 2",
-                    "2 cups Ingredient 3"
-                ],
-                steps: [
-                    "Prepare ingredients",
-                    "Mix ingredients",
-                    "Cook until done"
-                ],
-                _createdOn: 1613551344360
-            },
-            "985d9eab-ad2e-4622-a5c8-116261fb1fd2": {
+        resource: {
+            "188e6a19-b86d-4782-8134-0b86a0ede0a5": {
                 _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
-                name: "Roast Trout",
-                img: "assets/fish.jpg",
-                ingredients: [
-                    "4 cups Ingredient 1",
-                    "1 tbsp Ingredient 2",
-                    "1 tbsp Ingredient 3",
-                    "750 g  Ingredient 4",
-                    "25 g Ingredient 5"
-                ],
-                steps: [
-                    "Prepare ingredients",
-                    "Mix ingredients",
-                    "Cook until done"
-                ],
-                _createdOn: 1613551388703
+                title: "Kom-Emine",
+                imageUrl: "https://scontent.fsof5-1.fna.fbcdn.net/v/t39.30808-6/269130615_4581726391941241_9222450496495287748_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=T_2pND3OH0oQ7kNvgFYBTzz&_nc_ht=scontent.fsof5-1.fna&oh=00_AYAmR6XLQcim6mpkXNoe9ahf4wcFTFraekUuMLosDwMQ6w&oe=66B85691",
+                difficulty: "45 Degrees of Pain",
+                duration: "20000",
+                description: "The longest continuous mountain trail in Bulgaria! <3",
+                _createdOn: 1722971230115,
+                _id: "188e6a19-b86d-4782-8134-0b86a0ede0a5",
+                _updatedOn: 1722971453025,
+            },
+            "be259b64-be39-41d8-a9b7-c24812de7357": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                title: "Seven Rila Lakes",
+                imageUrl: "https://bookvila.bg/img/210220023045.jpg",
+                difficulty: "Strenuous",
+                duration: "240",
+                description: "One of the most beautifully stunning places in the Bulgarian mountains! ",
+                _createdOn: 1722972142283,
+                _id: "be259b64-be39-41d8-a9b7-c24812de7357",
+            },
+            "8e2290fb-08c7-4c77-8f9f-34e2790c06ce": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                title: "Musala Peak ",
+                imageUrl: "https://sunrisinglife.com/wp-content/uploads/2018/08/IMG_4911.jpg",
+                difficulty: "Moderate",
+                duration: "360",
+                description: "The highest peak in Bulgaria and the entire Balkan Peninsula. The name Mussala from Arabic means \"Near God\" and on the top you definitely\n",
+                _createdOn: 1722973363875,
+                _id: "8e2290fb-08c7-4c77-8f9f-34e2790c06ce",
+            },
+            "ed6e66b6-5d01-4189-b821-5a94d894e379": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                title: "Tarzans Trail To Botev Peak",
+                imageUrl: "https://trafficnews.bg/news/2016/10/30/fb7e600cc09cef72a9f9d7e2f9d91135.jpg",
+                difficulty: "45 Degrees of Pain",
+                duration: "720",
+                description: "The highest peak in the Balkan Mountains for which they say \"From 365 days a year here you can enjoy the weather 30\" another saying about the peak is \"There is no easy way to Botev peak\" which I think is true.",
+                _createdOn: 1722974229089,
+                _id: "ed6e66b6-5d01-4189-b821-5a94d894e379",
+                _updatedOn: 1722974256832
+            },
+            "d251f007-15df-4795-b13c-9d16a7a5d2b4": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                title: "Koncheto (The Foal)",
+                imageUrl: "https://tripsjournal.com/wp-content/uploads/2017/10/48-sedlovina-koncheto-kym-vryh-kutelo.jpg",
+                difficulty: "45 Degrees of Pain",
+                duration: "40",
+                description: "This is knife edge ridge in Pirin Mountains with extremely steep slopes on either side. It is said that some less experienced hikers go through Koncheto by saddling the ridge edge like a horse and slowly advancing, hence its name.",
+                _createdOn: 1723035655208,
+                _id: "d251f007-15df-4795-b13c-9d16a7a5d2b4"
+            },
+            "479a2ce5-f29a-4e78-8c81-e88369a699f5": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                title: "Veikata (The Twig)",
+                imageUrl: "https://preotkrii.bg/wp-content/uploads/2022/10/120332760_3843144682380928_7926293927607052570_n.jpg",
+                difficulty: "Strenuous",
+                duration: "720",
+                description: "The southern point of Bulgaria is Veikata Peak from which you could enjoy an incredible view of Greece and Adriatic See! It's perfect trail with lush forests and incredible meadows !",
+                _createdOn: 1723036532022,
+                _id: "479a2ce5-f29a-4e78-8c81-e88369a699f5",
+                _updatedOn: 1723036579839
+            },
+            "286d4f68-52c8-4969-8b6c-abf1532cd921": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                title: "Snezhanka Peak (Snow White Peak)",
+                imageUrl: "https://preotkrii.bg/wp-content/uploads/2023/01/124802254_1691494607695583_387160206164226340_n.jpg",
+                difficulty: "Walk in the park",
+                duration: "120",
+                description: "A favourite place for skiers from here and abroad! Great views, Great pastry shop on the top of the radio tower with even greater view! Summer or winter you would not make a mistake in going there!",
+                _createdOn: 1723036912334,
+                _id: "286d4f68-52c8-4969-8b6c-abf1532cd921",
+                _updatedOn: 1723036973032
+            },
+            "9d10f3f9-32c9-47b5-9d80-d13d2f381c66": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                title: "Cherni Peak (Black Peak) ",
+                imageUrl: "https://mypalette.info/wp-content/uploads/2020/01/IMG_2963-small.jpg",
+                difficulty: "Moderate",
+                duration: "180",
+                description: "The fourth highest peak and the second windiest place in Bulgaria, Cherni Peak is one of the favorite places of Sofia's hikers and skiers. ",
+                _createdOn: 1723038269814,
+                _id: "9d10f3f9-32c9-47b5-9d80-d13d2f381c66"
+            },
+            "52b15f3f-c5b2-46ca-8550-b4aa2be8e198": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                title: "Beglik Tash",
+                imageUrl: "https://static.bnr.bg/gallery/cr/7acf6c65f6ba908de5a1bfc8348f86ef.jpg",
+                difficulty: "Walk in the park",
+                duration: "480",
+                description: "Beglik Tash is a prehistoric rock sanctuary situated on the southern Black Sea coast of Bulgaria, a few kilometers north of the city of Primorsko.  On the trail you could enjoy incredible views of the Black Sea and pristine beaches",
+                _createdOn: 1723038958873,
+                _id: "52b15f3f-c5b2-46ca-8550-b4aa2be8e198"
+            }
+        },
+        likes: {
+            "3533064b-a13e-4e29-aa45-840678b8576b": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                gameId: "188e6a19-b86d-4782-8134-0b86a0ede0a5",
+                _createdOn: 1723045864517,
+                _id: "3533064b-a13e-4e29-aa45-840678b8576b"
+            },
+            "32802163-ed6a-447b-9c28-cb87c6b574e9": {
+                _ownerId: "847ec027-f659-4086-8032-5173e2f9c93a",
+                gameId: "be259b64-be39-41d8-a9b7-c24812de7357",
+                _createdOn: 1723045914369,
+                _id: "32802163-ed6a-447b-9c28-cb87c6b574e9"
             }
         },
         comments: {
@@ -1507,8 +1566,6 @@
                 _createdOn: 1614935268135,
                 _id: "a9bae6d8-793e-46c4-a9db-deb9e3484909"
             }
-        },
-        likes: {
         },
         ideas: {
             "833e0e57-71dc-42c0-b387-0ce0caf5225e": {

@@ -21,7 +21,7 @@ export default function Header() {
                 </Link>
                 <Link to={Path.Profile}>
                     {isAuth &&
-                        <p>Hello, {auth?.username}!</p>
+                        <p>Hello, {auth?.username.charAt(0).toUpperCase() + auth.username.slice(1)}!</p>
                     }
                 </Link>
             </div>

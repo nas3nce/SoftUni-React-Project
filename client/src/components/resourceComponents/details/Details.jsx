@@ -2,14 +2,16 @@ import { useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
+import Delete from '../delete/Delete';
 
 import { useAuthContext } from '../../../contexts/authContext';
 import { useModalContext } from '../../../contexts/modalContext';
 import * as resourceService from '../../../services/resourceService';
+import * as likeService from '../../../services/likeService';
 import { durationConverter } from '../../../utils/durationConverter';
 import { pathBuilder } from '../../../utils/pathConverter';
 import { Path } from '../../../constants/path';
-import Delete from '../delete/Delete';
+
 
 export default function Details() {
     const { id } = useParams();
@@ -19,16 +21,31 @@ export default function Details() {
 
 
     useEffect(() => {
-        resourceService.getOne(id)
-            .then(result => setResource(result))
+        Promise.all([
+            resourceService.getOne(id),
+            likeService.getByResource(id),
+        ]).then(([resourceData, likes ]) => {
+            const resourceState = { ...resourceData, likes };
+            setResource(resourceState);
+        })
             .catch(err => console.log(err));
-    }, []);
+    }, [id]);
 
     const { title, imageUrl, description, difficulty, _id, duration, _ownerId } = resource;
 
     const convertedDuration = durationConverter(duration);
 
     const isOwner = _ownerId === auth._id;
+
+    const onLikeSubmit = async () => {
+        const like = await likeService.create(id);
+        setResource(state => ({
+            ...state,
+            likes: [...state.likes, like]
+        }));
+    };
+
+    const alreadyLiked = resource?.likes?.find(x => x._ownerId === auth._id);
 
     return (
         <div className="detailsContainer">
@@ -50,10 +67,16 @@ export default function Details() {
 
                     <span className="fa-stack">
                         <i className="fa-solid fa-heart fa-stack-2x"></i>
-                        <p className="fa-stack-1x fa-stack-text fa-inverse"> 87 </p>
+                        <p className="fa-stack-1x fa-stack-text fa-inverse"> {resource?.likes?.length} </p>
                     </span>
 
-                    {isAuth && <Button className='likeBtn' variant="success">Like</Button>}
+                    {isAuth
+                        && !alreadyLiked
+                        && <Button
+                            className='likeBtn'
+                            variant="success"
+                            onClick={() => onLikeSubmit()}
+                        >Like</Button>}
                 </div>
             </div>
             <p className='description'><strong>Description :</strong> {description}</p>

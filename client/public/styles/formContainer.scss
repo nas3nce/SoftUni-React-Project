@@ -1,7 +1,7 @@
 .formContainer {
     padding: 15px 30px;
     min-width: 30%;
-    max-height: 80vh;
+    max-height: 83vh;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
@@ -9,9 +9,15 @@
     background-color: rgba(255, 255, 255, 0.438);
     margin-top: -60px;
 
-    label{
+
+    label {
         margin: 0;
         margin-bottom: 3px;
-
+        max-height: 2vh;
     }
+
+    input {
+        max-height: 5vh;
+    }
+
 }

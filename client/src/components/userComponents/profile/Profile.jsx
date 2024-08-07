@@ -9,8 +9,8 @@ export default function Profile() {
         <div className="profileContainer">
             <h3>{username}</h3>
             <img src={imageUrl} alt="" />
-            <p><strong>email:</strong> {email}</p>
-            <p><strong>user since :</strong> {elapsedTime(_createdOn)}</p>
+            <p><strong>Email:</strong> {email}</p>
+            <p><strong>User since :</strong> {elapsedTime(_createdOn)}</p>
         </div>
     );
 

@@ -8,7 +8,7 @@
 
 .headerLeft {
     display: flex;
-    color: #fff;    
+    color: #fff;
     align-items: center;
     gap: 20px;
     font-weight: bold;
@@ -20,7 +20,7 @@
 
 .logo img {
     height: 55px;
-    padding: 5px;
+    padding: 5px 0px 0px 10px;
     margin-left: 10px;
     min-width: 60px;
 }
@@ -30,8 +30,9 @@
     padding: 0.5rem 25px;
 }
 
-.navButton:hover , .headerLeft p:hover {
-    background-color:rgba(173, 173, 173, 0.301);
+.navButton:hover,
+.headerLeft p:hover {
+    background-color: rgba(173, 173, 173, 0.301);
 }
 
 .nav ul {

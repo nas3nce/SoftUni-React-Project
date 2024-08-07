@@ -51,7 +51,6 @@ export default function Create() {
                         onChange={onChange}
                         value={formValues.imageUrl}
                         required
-
                     />
                 </Form.Group>
 
@@ -90,7 +89,7 @@ export default function Create() {
                         as='textarea'
                         rows={3}
                         type="text"
-                        placeholder="Location Name"
+                        placeholder="Trail Description"
                         name={formKeys.Description}
                         onChange={onChange}
                         value={formValues.description}
