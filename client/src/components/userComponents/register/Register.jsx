@@ -29,7 +29,7 @@ export default function Register() {
             <h2 className='text-center p-3'>Register</h2 >
             <Form onSubmit={onSubmit}>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label>Email address *</Form.Label>
                     <Form.Control
                         type="email"
                         name={formKeys.Email}
@@ -41,7 +41,7 @@ export default function Register() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-                    <Form.Label>Username</Form.Label>
+                    <Form.Label>Username *</Form.Label>
                     <Form.Control
                         type="text"
                         name={formKeys.Username}
@@ -64,7 +64,7 @@ export default function Register() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput4">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>Password *</Form.Label>
                     <Form.Control
                         type="password"
                         name={formKeys.Password}
@@ -77,7 +77,7 @@ export default function Register() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput5">
-                    <Form.Label>Repeat Password</Form.Label>
+                    <Form.Label>Repeat Password *</Form.Label>
                     <Form.Control
                         type="password"
                         name={formKeys.RePass}

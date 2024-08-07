@@ -32,7 +32,7 @@ export default function Create() {
             <h2 className='text-center p-3'>Add a Trail</h2 >
             <Form onSubmit={onSubmit}>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>Trail Name</Form.Label>
+                    <Form.Label>Trail Name *</Form.Label>
                     <Form.Control
                         type="text"
                         placeholder="Trail Name"
@@ -44,7 +44,7 @@ export default function Create() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput4">
-                    <Form.Label>Trail Image Link</Form.Label>
+                    <Form.Label>Trail Image Link *</Form.Label>
                     <Form.Control type="url"
                         placeholder="https://..."
                         name={formKeys.ImageUrl}
@@ -55,7 +55,7 @@ export default function Create() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput5">
-                    <Form.Label>Difficulty</Form.Label>
+                    <Form.Label>Difficulty *</Form.Label>
                     <Form.Select
                         aria-label="Select"
                         name={formKeys.Difficulty}
@@ -72,7 +72,7 @@ export default function Create() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput3">
-                    <Form.Label>Average Duration</Form.Label>
+                    <Form.Label>Average Duration *</Form.Label>
                     <Form.Control
                         type="number"
                         placeholder="Time In Minutes"
@@ -84,7 +84,7 @@ export default function Create() {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-                    <Form.Label>Description</Form.Label>
+                    <Form.Label>Description *</Form.Label>
                     <Form.Control
                         as='textarea'
                         rows={3}

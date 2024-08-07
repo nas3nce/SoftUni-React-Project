@@ -28,7 +28,7 @@ export default function Login() {
             <h2 className='text-center p-3'>Login</h2 >
             <Form onSubmit={onSubmit}>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label>Email address *</Form.Label>
                     <Form.Control
                         type="email"
                         name={formKeys.Email}
@@ -39,7 +39,7 @@ export default function Login() {
                     />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="exampleForm.ControlInput2">
-                    <Form.Label>Password</Form.Label>
+                    <Form.Label>Password *</Form.Label>
                     <Form.Control
                         type="password"
                         placeholder="******"
