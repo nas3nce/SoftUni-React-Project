@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 import Button from 'react-bootstrap/Button';
@@ -11,6 +11,7 @@ import * as likeService from '../../../services/likeService';
 import { durationConverter } from '../../../utils/durationConverter';
 import { pathBuilder } from '../../../utils/pathConverter';
 import { Path } from '../../../constants/path';
+import { Spinner } from 'react-bootstrap';
 
 
 export default function Details() {
@@ -24,7 +25,7 @@ export default function Details() {
         Promise.all([
             resourceService.getOne(id),
             likeService.getByResource(id),
-        ]).then(([resourceData, likes ]) => {
+        ]).then(([resourceData, likes]) => {
             const resourceState = { ...resourceData, likes };
             setResource(resourceState);
         })
@@ -47,10 +48,23 @@ export default function Details() {
 
     const alreadyLiked = resource?.likes?.find(x => x._ownerId === auth._id);
 
+    console.log(resource);
+
+    if (!resource.title) {
+        return (
+            <div className="spinnerContainer">
+                <Spinner className='spinner' animation="border" />
+            </div>
+        );
+
+    }
+
     return (
         <div className="detailsContainer">
             <div className="header">
-                <h2>{title}</h2>
+                <div className="headerTitle">
+                    <h2>{title}</h2>
+                </div>
                 <div className="buttons">
                     {isOwner &&
                         <>

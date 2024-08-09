@@ -38,13 +38,13 @@ function App() {
               <ModalProvider>
                 <Header />
                 <div className="site">
+
                   <Routes>
 
                     <Route path={Path.Home} element={<Home />} />
                     <Route path={Path.Catalog} element={<Catalog />} />
                     <Route path={Path.Details} element={<Details />} />
                     <Route path={Path.Error} element={<PageNotFound />} />
-
                     <Route element={<AuthGuard />}>
                       <Route path={Path.Create} element={<Create />} />
                       <Route path={Path.Edit} element={<Edit />} />

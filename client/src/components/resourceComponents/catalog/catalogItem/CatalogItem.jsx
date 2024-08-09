@@ -1,3 +1,4 @@
+import { Spinner } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 
@@ -7,6 +8,10 @@ export default function CatalogItem({
     imageUrl,
     description
 }) {
+    if (!imageUrl) {
+        return <Spinner animation="border" />;
+    }
+
     return (
         <div className="card">
             <img src={imageUrl} alt="" />

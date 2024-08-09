@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useResourceContext } from '../../../contexts/resourceContext';
 import CatalogItem from './catalogItem/CatalogItem';
+import { Spinner } from 'react-bootstrap';
 
 export default function Catalog() {
     const { resources } = useResourceContext();
@@ -22,6 +23,16 @@ export default function Catalog() {
     };
 
     const changePage = (num) => setCurrentPage(num);
+
+    console.log(resources);
+
+    if (resources.length === 0) {
+        return (
+            <div className="spinnerContainer">
+                <Spinner className='spinner' animation="border" />
+            </div>
+        );
+    }
 
     return (
         <>

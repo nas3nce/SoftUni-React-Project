@@ -1,0 +1,19 @@
+.spinnerContainer {
+    width: 100%;
+    height: calc(100vh - 225px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner-border {
+    --bs-spinner-width: 4rem;
+    --bs-spinner-height: 4rem;
+    --bs-spinner-vertical-align: -0.125em;
+    --bs-spinner-border-width: 0.42em;
+    --bs-spinner-animation-speed: 0.75s;
+    --bs-spinner-animation-name: spinner-border;
+    border: var(--bs-spinner-border-width) solid currentcolor;
+    border-right-color: transparent;
+}
+

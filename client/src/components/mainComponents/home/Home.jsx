@@ -6,6 +6,7 @@ import Carousel from 'react-bootstrap/Carousel';
 import * as resourceService from '../../../services/resourceService';
 import { pathBuilder } from '../../../utils/pathConverter';
 import { Path } from '../../../constants/path';
+import { Spinner } from 'react-bootstrap';
 
 export default function Home() {
     const navigate = useNavigate();
@@ -16,6 +17,14 @@ export default function Home() {
             .then(result => setLatest(result))
             .catch(err => console.log(err));
     }, []);
+
+    if (latest.length === 0) {
+        return (
+            <div className="spinnerContainer">
+                <Spinner className='spinner' animation="border" />
+            </div>
+        );
+    }
 
     return (
         <>

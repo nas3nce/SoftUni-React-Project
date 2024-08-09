@@ -6,11 +6,13 @@ export default function Profile() {
     const { username, email, _createdOn, imageUrl } = auth;
 
     return (
-        <div className="profileContainer">
-            <h3>{username}</h3>
-            <img src={imageUrl} alt="" />
-            <p><strong>Email:</strong> {email}</p>
-            <p><strong>User since :</strong> {elapsedTime(_createdOn)}</p>
+        <div className="profilePage">
+            <div className="profileContainer">
+                <h3>{username}</h3>
+                <img src={imageUrl} alt="" />
+                <p><strong>Email:</strong> {email}</p>
+                <p><strong>User since :</strong> {elapsedTime(_createdOn)}</p>
+            </div>
         </div>
     );
 
