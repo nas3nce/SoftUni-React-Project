@@ -1,7 +1,7 @@
 .formContainer {
     padding: 15px 30px;
     min-width: 30%;
-    max-height: 83vh;
+    // max-height: 83vh;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
@@ -20,4 +20,9 @@
         max-height: 5vh;
     }
 
+}
+
+.loginContainer { 
+    min-width: 30%;
+    min-height: 70vh;
 }

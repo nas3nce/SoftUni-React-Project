@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { useResourceContext } from '../../../contexts/resourceContext';
 import CatalogItem from './catalogItem/CatalogItem';
-import Pagination from 'react-bootstrap/Pagination';
-
-
 
 export default function Catalog() {
     const { resources } = useResourceContext();
+
     const [currentPage, setCurrentPage] = useState(1);
     const resourcePerPage = 8;
     const lastIndex = currentPage * resourcePerPage;
@@ -23,11 +21,11 @@ export default function Catalog() {
         if (currentPage !== lastPage) setCurrentPage(currentPage + 1);
     };
 
-    const changePage = (id) => setCurrentPage(id);
+    const changePage = (num) => setCurrentPage(num);
 
     return (
         <>
-            <h1 className="fs-7 mt-7 mb-3">Choose Your Next Journey!</h1>
+            <h1 className="fs-7 mb-3">Choose Your Next Journey!</h1>
             <div className="catalogContainer">
                 {shownRecords.map(resource => <CatalogItem key={resource._id} {...resource} />)}
             </div>

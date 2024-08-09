@@ -17,7 +17,7 @@ export default function Delete({
     const onDeleteHandler = () => {
         resourceService.remove(_id);
         onDeleteSubmit(_id);
-        setModal(false)
+        setModal(false) 
     };
 
     return (
